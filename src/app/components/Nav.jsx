@@ -29,8 +29,8 @@ export default function Nav() {
 				/>
 			</div>
 			<div className="self-center flex flex-col h-full justify-center items-center">
-				<h1 className={`${lobster.className} text-3xl`}>Aaron Celia</h1>
-				<h3>Freelance Web Developer</h3>
+				<h3 className={`${lobster.className} text-3xl`}>Aaron Celia</h3>
+				<h1>Freelance Web Developer</h1>
 			</div>
 			<Fragment key="left">
 				<SwipeableDrawer anchor="left" open={open} onClose={() => setOpen(false)}>
