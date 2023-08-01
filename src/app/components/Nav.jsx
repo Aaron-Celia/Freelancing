@@ -34,7 +34,7 @@ export default function Nav() {
 			</div>
 			<Fragment key="left">
 				<SwipeableDrawer onOpen={() => null} anchor="left" open={open} onClose={() => setOpen(false)}>
-					<div className="h-screen w-60 mb-16 flex flex-col items-start justify-around">
+					<div className="h-screen w-60 mb-20 flex flex-col items-start justify-around">
 						<div onClick={() => setOpen(false)} className="ml-5 flex items-center hover:scale-105 duration-100">
 							<HomeIcon fontSize="large" />
 							<Link className="ml-2 font-bold text-xl" href="/">
