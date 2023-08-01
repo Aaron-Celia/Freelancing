@@ -25,7 +25,7 @@ export default function Nav() {
 				<Image
 					src={menuIcon}
 					alt="Menu Button"
-					className="h-14 w-14 absolute left-3 top-4"
+					className="h-12 w-12 absolute left-3 top-4"
 				/>
 			</div>
 			<div className="self-center flex flex-col h-full justify-center items-center">
