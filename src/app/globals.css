@@ -28,3 +28,7 @@
   position: fixed;
   overflow: auto;
 }
+
+#profile-pic {
+  margin-left: calc(50vw - 5rem);
+}

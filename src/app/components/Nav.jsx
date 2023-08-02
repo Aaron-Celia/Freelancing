@@ -1,6 +1,7 @@
 "use client";
 import { Kaushan_Script, Gruppo } from "next/font/google";
 import menuIcon from "../../../public/white-menu.png";
+import menuIcon2 from "../../../public/white-icon-2.png";
 import Image from "next/image";
 import { Drawer, SwipeableDrawer } from "@mui/material";
 import { Fragment, useState } from "react";
@@ -32,16 +33,17 @@ export default function Nav() {
 				className="laptop:hidden laptop:w-[20%] laptop:bg-red-500"
 				onClick={() => setOpen(true)}>
 				<Image
-					src={menuIcon}
+					src={menuIcon2}
 					alt="Menu Button"
-					className="laptop:hidden h-10 w-12 absolute left-3 top-5"
+					className="laptop:hidden h-14 w-14 absolute left-3 top-3"
 				/>
+                <div className="rounded-full absolute h-10 w-10 bg-white left-[1.3rem] top-[1.3rem] -z-50"></div>
 			</div>
-			<div className="self-center flex flex-col h-full justify-center items-center laptop:items-start laptop:ml-10">
-				<h3 className={`${gruppo.className} text-4xl`}>Aaron Celia</h3>
-				<h1 className={`${gruppo.className}`}>Freelance Web Developer</h1>
+			<div className="self-center flex flex-col h-full justify-center items-center laptop:items-start laptop:ml-4">
+				<h3 className={`${gruppo.className} text-2xl phone:text-4xl`}>Aaron Celia</h3>
+				<h1 className={`${gruppo.className} text-xs phone:text-lg laptop:text-2xl`}>Freelance Developer</h1>
 			</div>
-			<div className={`${gruppo.className} hidden laptop:flex items-center h-full`}>
+			<div className={`${gruppo.className} hidden laptop:flex items-center h-full laptop:text-xl`}>
 				<Link className="ml-2 font-extrabold text-md mx-6 hover:bg-gray-300 hover:text-black duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center" href="/">
 					Home
 				</Link>
@@ -49,10 +51,10 @@ export default function Nav() {
 					My Work
 				</Link>
 				<Link className="ml-2 font-extrabold text-md mx-6 hover:bg-gray-300 hover:text-black duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center" href="/services">
-					Services Offered
+					Services
 				</Link>
 				<Link className="ml-2 font-extrabold text-md mx-6 hover:bg-gray-300 hover:text-black duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center" href="/meet">
-					Book a Meeting
+					Meet With Me
 				</Link>
 				<Link className="ml-2 font-extrabold text-md mx-6 hover:bg-gray-300 hover:text-black duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center" href="/contact">
 					Contact Me
