@@ -41,7 +41,7 @@ export default function Nav() {
 			</div>
 			<div className="self-center flex flex-col h-full justify-center items-center laptop:items-start laptop:ml-4">
 				<h3 className={`${gruppo.className} text-2xl phone:text-4xl`}>Aaron Celia</h3>
-				<h1 className={`${gruppo.className} text-xs phone:text-lg laptop:text-2xl`}>Freelance Developer</h1>
+				<h1 className={`${gruppo.className} text-xs phone:text-lg laptop:text-2xl`}>Software Engineer</h1>
 			</div>
 			<div className={`${gruppo.className} hidden laptop:flex items-center h-full laptop:text-xl`}>
 				<Link className="ml-2 font-extrabold text-md mx-6 hover:bg-gray-300 hover:text-black duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center" href="/">
