@@ -21,14 +21,44 @@
 }
 
 #bg {
-	background: #EEEDED;
+	background: #eeeded;
 	height: calc(100vh - 5rem);
 	width: 100vw;
 	margin-top: 5rem;
-  position: fixed;
-  overflow: auto;
+	position: fixed;
+	overflow: auto;
 }
 
 #profile-pic {
-  margin-left: calc(50vw - 7.5rem);
+	/* margin-left: calc(50vw - 7.5rem); */
+	margin-left: -15rem;
+}
+
+#hero-section {
+	background-image: linear-gradient(
+		to bottom,
+		#222222,
+		#2d2d2d,
+		#383838,
+		#444444,
+		#505050,
+		#5b5b5b,
+		#666666,
+		#717171,
+		#7e7e7e,
+		#8c8c8c,
+		#999999,
+		#a7a7a7
+	);
+	height: calc(100vh - 5rem);
+}
+
+#subsection {
+	background-color: #a7a7a7;
+	height: fit-content;
+}
+
+.header-main {
+  color: #e1e1e1;
+  text-shadow: 10px 20px 80px white;
 }

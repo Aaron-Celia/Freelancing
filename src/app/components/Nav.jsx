@@ -170,12 +170,12 @@ export default function Nav() {
 				<Link
 					className="menu-item text-transparent ml-2 font-extrabold text-md mx-6 hover:scale-110 duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center"
 					href="/meet">
-					Meet With Me
+					Book A Meeting
 				</Link>
 				<Link
 					className="menu-item text-transparent ml-2 font-extrabold text-md mx-6 hover:scale-110 duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center"
 					href="/contact">
-					Contact Me
+					Get in Touch
 				</Link>
 				<Link
 					className="menu-item text-transparent ml-2 font-extrabold text-md mx-6 hover:scale-110 duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center"
@@ -229,7 +229,7 @@ export default function Nav() {
 							className={`ml-5 flex items-center hover:scale-105 duration-100 ${textColor5}`}>
 							<ContactMailIcon fontSize="large" />
 							<Link className="ml-2 font-bold text-xl" href="/contact">
-								Contact Me
+								Get in Touch
 							</Link>
 						</div>
 						<div
