@@ -24,9 +24,9 @@ export default function ContactForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setIsLoading(true);
 		// Execute the reCAPTCHA when the form is submitted
 		recaptchaRef.current.execute();
+		setIsLoading(true);
 	};
 
 	const onReCAPTCHAChange = async (captchaCode) => {
