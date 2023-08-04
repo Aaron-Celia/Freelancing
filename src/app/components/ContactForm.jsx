@@ -54,7 +54,7 @@ export default function ContactForm() {
 						response: captchaCode
 					},
                     headers: {
-                        'Access-Control-Allow-Origin': true
+                        'Access-Control-Allow-Origin': "*"
                     }
 				}
 			);
