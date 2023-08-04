@@ -49,7 +49,10 @@ export default function ContactForm() {
 					params: {
 						secret: process.env.NEXT_PUBLIC_RECAPTCHA_SECRET,
 						response: captchaCode
-					}
+					},
+                    headers: {
+                        'Access-Control-Allow-Origin': true
+                    }
 				}
 			);
 			if (!verify.data.success) {
