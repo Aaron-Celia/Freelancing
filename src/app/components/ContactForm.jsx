@@ -127,16 +127,17 @@ export default function ContactForm() {
 		);
 	}
 	return (
-		<main className="single-page flex items-center justify-center">
+		<main className="single-page flex flex-col items-center">
+            <h3 className="mb-10 mt-[7.5rem] text-white text-4xl">Let's Connect</h3>
 			<form
 				onSubmit={(e) => handleSubmit(e)}
-				className="w-[60vw] flex flex-col">
+				className="w-[60vw] laptop:w-[40vw] flex flex-col">
 				<TextField
 					id="outlined-basic"
-					label="Your Email"
+					label="Email"
 					required
 					variant="filled"
-					className="bg-gray-300"
+					className="bg-gray-300 w-full"
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 					sx={{ marginBottom: "2rem" }}
@@ -147,7 +148,7 @@ export default function ContactForm() {
 					value={subject}
 					onChange={(e) => setSubject(e.target.value)}
 					label="Subject"
-					className="bg-gray-300"
+					className="bg-gray-300 w-full"
 					variant="filled"
 				/>
 				<TextField
@@ -156,7 +157,7 @@ export default function ContactForm() {
 					variant="filled"
 					required
 					value={message}
-					className="bg-gray-300"
+					className="bg-gray-300 w-full"
 					onChange={(e) => setMessage(e.target.value)}
 					multiline
 					rows={7}
@@ -171,7 +172,7 @@ export default function ContactForm() {
 				<Button
 					type="submit"
 					variant="contained"
-					className="bg-blue-600 hover:bg-green-700 duration-300"
+					className="bg-blue-600 hover:bg-green-700 duration-300 laptop:w-[50%] laptop:ml-[25%]"
 					endIcon={displayLoading ? null : <SendIcon />}>
 					{displayLoading ? <CircularProgress color="info" /> : "Send"}
 				</Button>
