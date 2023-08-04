@@ -1,6 +1,5 @@
-import { config } from 'dotenv'
+require('dotenv').config()
 import { NextResponse } from 'next/server';
-config();
 
 export async function POST(request, response) {
     const body = await request.json()
