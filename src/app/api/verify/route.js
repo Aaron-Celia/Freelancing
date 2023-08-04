@@ -19,7 +19,7 @@ export async function POST(request, response) {
         })
     const googleResponseJson = await googleResponse.json()
     if (!googleResponseJson?.success) {
-        return NextResponse.json({ message: "failed", success: false, error: "Captcha failed" })
+        return NextResponse.json({ message: "failed", data: googleResponseJson, success: false, error: "Captcha failed" })
     }
     return NextResponse.json({ message: "verified", success: true })
 }
