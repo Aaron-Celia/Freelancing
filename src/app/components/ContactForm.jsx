@@ -128,7 +128,7 @@ export default function ContactForm() {
 	}
 	return (
 		<main className="single-page flex flex-col items-center">
-            <h3 className="mb-10 mt-20 laptop:mt-[7.5rem] text-white text-4xl">Let's Connect</h3>
+            <h3 className="mb-10 mt-10 laptop:mt-[7.5rem] text-white text-4xl">Let's Connect</h3>
 			<form
 				onSubmit={(e) => handleSubmit(e)}
 				className="w-[60vw] laptop:w-[40vw] flex flex-col">
