@@ -16,31 +16,30 @@ export async function POST (request, response) {
 		console.log('backend function ran')
         const body = await request.json();
         const { email, subject, message, captchaCode } = body;
-		const messageResponse = await client.messages
-			.create({
-				body: `You recieved a message from someone! \nEmail: ${email} \nSubject: ${subject} \nMessage:\n ${message}`,
-				from: twillioNumber,
-				messagingServiceSid: messSid,
-				to: recipient
-			})
-			.then((message) => {
-                return message
-            });
-        // return NextResponse.json({ message: messageResponse.status})
-		if(messageResponse.status === 'accepted'){
-			const googleResponse = await axios.post(
-				"https://www.google.com/recaptcha/api/siteverify",
-				{
-					params: {
-						secret: process.env.RECAPTCHA_SECRET,
-						response: captchaCode
-					}
+		const googleResponse = await axios.post(
+			"https://www.google.com/recaptcha/api/siteverify",
+			{
+				params: {
+					secret: process.env.RECAPTCHA_SECRET,
+					response: captchaCode
 				}
-			);
+			}
+		);
+		if(messageResponse.status === 'accepted'){
 			if(!googleResponse.data.success){
-				return NextResponse.json({ verified: false });
+				return NextResponse.json({ message: null, verified: false });
 			} else {
-				return NextResponse.json({ verified: true });
+				const messageResponse = await client.messages
+					.create({
+						body: `You recieved a message from someone! \nEmail: ${email} \nSubject: ${subject} \nMessage:\n ${message}`,
+						from: twillioNumber,
+						messagingServiceSid: messSid,
+						to: recipient
+					})
+					.then((message) => {
+						return message;
+					});
+				return NextResponse.json({ message: messageResponse.status})
 			}
 		}
 	} catch (err) {

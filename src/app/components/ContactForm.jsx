@@ -40,7 +40,7 @@ export default function ContactForm() {
 			setError("Unprocessable content.");
 			setTimeout(() => {
 				setError("");
-			}, 2500);
+			}, 5000);
 			recaptchaRef.current.reset();
 			setIsLoading(false);
 			return;
@@ -55,7 +55,7 @@ export default function ContactForm() {
 			});
             setIsLoading(true)
             console.log('my API RES: ', res)
-			if (res.data.verified) {
+			if (res.data.message === 'accepted') {
 				setEmail("");
 				setSubject("");
 				setMessage("");
@@ -70,7 +70,7 @@ export default function ContactForm() {
 				setIsLoading(false);
 				setTimeout(() => {
 					setError("");
-				}, 2500);
+				}, 5000);
 				recaptchaRef.current.reset();
 			}
 		} catch (e) {
@@ -102,8 +102,8 @@ export default function ContactForm() {
 	if (isLoading) {
 		return (
 			<main className="single-page flex flex-col items-center justify-center">
-				<CircularProgress size="5rem" color="primary" />
-                <h3 className={`${semiboldRoboto.className} text-center text-2xl laptop:text-4xl text-white`}>Verifying reCAPTCHA Response...</h3>
+				<CircularProgress size="5rem" className="mb-10" color="primary" />
+                <h3 className={`${semiboldRoboto.className} text-center text-xl laptop:text-3xl text-white`}>Verifying reCAPTCHA Response...</h3>
 			</main>
 		);
 	}
