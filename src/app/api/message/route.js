@@ -19,6 +19,9 @@ export async function POST(request, response) {
 				params: {
 					secret: process.env.RECAPTCHA_SECRET,
 					response: captchaCode
+				},
+				headers: {
+					'Access-Control-Allow-Origin': '*'
 				}
 			}
 		);
