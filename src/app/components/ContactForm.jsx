@@ -46,7 +46,19 @@ export default function ContactForm() {
 			return;
 		}
 		try {
-            console.log('top of try block')
+            console.log('top of try block');
+            const verifiedData = await axios.post('/api/verify', { captchaCode })
+            console.log('verifiedData: ', verifiedData)
+            if (verifiedData.data.success === false) {
+                console.log('verifiedData.data.success === false')
+                setError('Unprocessable content.')
+                setTimeout(() => {
+                    setError('')
+                }, 5000)
+                recaptchaRef.current.reset()
+                setIsLoading(false)
+                return
+            }
 			const res = await axios.post("/api/message", {
 				email: email,
 				subject: subject || "null",
