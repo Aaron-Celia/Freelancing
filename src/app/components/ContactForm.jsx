@@ -19,15 +19,16 @@ export default function ContactForm() {
 	const [message, setMessage] = useState("");
 	const [messageSuccess, setMessageSuccess] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
+	const [displayLoading, setDisplayLoading] = useState(false);
 	const [error, setError] = useState("");
 
 	const recaptchaRef = createRef();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+        setDisplayLoading(true)
 		// Execute the reCAPTCHA when the form is submitted
 		recaptchaRef.current.execute();
-		setIsLoading(true);
 	};
 
 	const onReCAPTCHAChange = async (captchaCode) => {
@@ -66,6 +67,7 @@ export default function ContactForm() {
 				subject: subject || "null",
 				message: message
 			});
+            setIsLoading(true)
             console.log('my API RES: ', res)
 			if (res.data.message == "accepted") {
 				setEmail("");
@@ -172,7 +174,7 @@ export default function ContactForm() {
 					variant="contained"
 					className="bg-blue-600 hover:bg-green-700 duration-300"
 					endIcon={isLoading ? null : <SendIcon />}>
-					{isLoading ? <CircularProgress color="info" /> : "Send"}
+					{displayLoading ? <CircularProgress color="info" /> : "Send"}
 				</Button>
 			</form>
 		</main>
