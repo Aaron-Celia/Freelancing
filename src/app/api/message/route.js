@@ -39,7 +39,9 @@ export async function POST (request, response) {
 					.then((message) => {
 						return message;
 					});
-				return NextResponse.json({ message: messageResponse.status})
+				if(messageResponse) {
+					return NextResponse.json({ message: messageResponse.status})
+				}
 			}
 		}
 	} catch (err) {
