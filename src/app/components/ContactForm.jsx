@@ -44,31 +44,6 @@ export default function ContactForm() {
 			recaptchaRef.current.reset();
 			setIsLoading(false);
 			return;
-		} else {
-            console.log('captchaCode exists')
-			const verify = await axios.post(
-				"https://www.google.com/recaptcha/api/siteverify",
-				{
-					params: {
-						secret: process.env.NEXT_PUBLIC_RECAPTCHA_SECRET,
-						response: captchaCode
-					},
-                    headers: {
-                        'Access-Control-Allow-Origin': "*"
-                    }
-				}
-			);
-            console.log('verify api call response (${verify}): ', verify)
-			if (!verify.data.success) {
-                console.log('verify.data.success is falsy')
-				setError("Unprocessable content.");
-				setTimeout(() => {
-					setError("");
-				}, 2500);
-				recaptchaRef.current.reset();
-				setIsLoading(false);
-				return;
-			}
 		}
 		try {
             console.log('top of try block')
@@ -79,7 +54,7 @@ export default function ContactForm() {
 			});
             setIsLoading(true)
             console.log('my API RES: ', res)
-			if (res.data.message == "accepted") {
+			if (res.data.verified) {
 				setEmail("");
 				setSubject("");
 				setMessage("");
@@ -127,13 +102,14 @@ export default function ContactForm() {
 		return (
 			<main className="single-page flex items-center justify-center">
 				<CircularProgress size="5rem" color="primary" />
+                <h3 className={`${semiboldRoboto.className} text-center text-2xl laptop:text-4xl text-white`}>Verifying reCAPTCHA Response...</h3>
 			</main>
 		);
 	}
 	if (error) {
 		return (
 			<main className="single-page flex items-center justify-center">
-				<h3 className="text-2xl">{error}</h3>
+				<h3 className={`${semiboldRoboto.className} text-2xl text-center laptop:text-4xl text-red-500`}>{error}</h3>
 			</main>
 		);
 	}

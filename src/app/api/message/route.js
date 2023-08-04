@@ -8,6 +8,8 @@ const client = require("twilio")(
 );
 const recipient = process.env.RECIPIENT;
 import { NextResponse } from "next/server";
+import axios from 'axios'
+import { headers } from 'next/server'
 
 
 export async function POST (request, response) {
@@ -25,7 +27,26 @@ export async function POST (request, response) {
 			.then((message) => {
                 return message
             });
-        return NextResponse.json({ message: messageResponse.status})
+        // return NextResponse.json({ message: messageResponse.status})
+		if(messageResponse.status === 'accepted'){
+			const googleResponse = await axios.post(
+				"https://www.google.com/recaptcha/api/siteverify",
+				{
+					params: {
+						secret: process.env.RECAPTCHA_SECRET,
+						response: captchaCode
+					},
+					headers: {
+						headers
+					}
+				}
+			);
+			if(!googleResponse.data.success){
+				return NextResponse.json({ verified: false });
+			} else {
+				return NextResponse.json({ verified: true });
+			}
+		}
 	} catch (err) {
         return NextResponse.json({ message: 'failed', error: err.message })
     }
