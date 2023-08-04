@@ -9,7 +9,6 @@ const client = require("twilio")(
 const recipient = process.env.RECIPIENT;
 import { NextResponse } from "next/server";
 import axios from 'axios'
-import { headers } from 'next/server'
 
 
 export async function POST (request, response) {
@@ -35,9 +34,6 @@ export async function POST (request, response) {
 					params: {
 						secret: process.env.RECAPTCHA_SECRET,
 						response: captchaCode
-					},
-					headers: {
-						headers
 					}
 				}
 			);
