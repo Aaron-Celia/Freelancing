@@ -12,6 +12,7 @@ import { NextResponse } from "next/server";
 
 export async function POST (request, response) {
 	try {
+		console.log('backend function ran')
         const body = await request.json();
         const { email, subject, message } = body;
 		const messageResponse = await client.messages

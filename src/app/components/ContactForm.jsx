@@ -60,11 +60,13 @@ export default function ContactForm() {
 			}
 		}
 		try {
+            console.log('top of try block')
 			const res = await axios.post("/api/message", {
 				email: email,
 				subject: subject || "null",
 				message: message
 			});
+            console.log('my API RES: ', res)
 			if (res.data.message == "accepted") {
 				setEmail("");
 				setSubject("");
