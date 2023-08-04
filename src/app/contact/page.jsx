@@ -1,7 +1,10 @@
+import ContactForm from "../components/ContactForm";
 
-
-export default function ContactPage() {
+// contact form not in git version control for security reasons on recaptcha.
+export default function page() {
   return (
-    <div>Contact</div>
+    <main className='single-page'>
+        <ContactForm />
+    </main>
   )
 }

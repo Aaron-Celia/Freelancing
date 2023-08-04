@@ -53,6 +53,25 @@
 	height: calc(100vh - 5rem);
 }
 
+.single-page {
+  	background-image: linear-gradient(
+		to bottom,
+		#222222,
+		#2d2d2d,
+		#383838,
+		#444444,
+		#505050,
+		#5b5b5b,
+		#666666,
+		#717171,
+		#7e7e7e,
+		#8c8c8c,
+		#999999,
+		#a7a7a7
+	);
+	height: calc(100vh - 5rem);
+}
+
 #subsection {
 	background-color: #a7a7a7;
 	height: 100vh;
@@ -61,4 +80,9 @@
 .header-main {
   color: #e1e1e1;
   text-shadow: 10px 20px 80px white;
+}
+
+.single-page {
+  height: calc(100vh - 5rem);
+  width: 100vw;
 }
