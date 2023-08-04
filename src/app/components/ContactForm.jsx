@@ -32,6 +32,8 @@ export default function ContactForm() {
 	};
 
 	const onReCAPTCHAChange = async (captchaCode) => {
+        setDisplayLoading(false);
+        setIsLoading(true);
 		if (!captchaCode) {
 			setError("Unprocessable content.");
 			setTimeout(() => {
@@ -173,7 +175,7 @@ export default function ContactForm() {
 					type="submit"
 					variant="contained"
 					className="bg-blue-600 hover:bg-green-700 duration-300"
-					endIcon={isLoading ? null : <SendIcon />}>
+					endIcon={displayLoading ? null : <SendIcon />}>
 					{displayLoading ? <CircularProgress color="info" /> : "Send"}
 				</Button>
 			</form>
