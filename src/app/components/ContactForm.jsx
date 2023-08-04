@@ -49,8 +49,8 @@ export default function ContactForm() {
 				setEmail("");
 				setSubject("");
 				setMessage("");
-				setMessageSuccess(true);
 				setIsLoading(false);
+				setMessageSuccess(true);
 				setTimeout(() => {
 					setMessageSuccess(false);
 				}, 5000);
