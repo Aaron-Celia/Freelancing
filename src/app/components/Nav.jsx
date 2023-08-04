@@ -185,7 +185,7 @@ export default function Nav() {
 			</div>
 			<Fragment key="left">
 				<SwipeableDrawer
-					className={`${gruppo.className} laptop:hidden`}
+					className={`${gruppo.className} laptop:hidden h-[90vh]`}
 					onOpen={() => null}
 					anchor="left"
 					open={open}
