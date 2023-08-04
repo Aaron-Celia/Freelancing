@@ -32,9 +32,11 @@ export default function ContactForm() {
 	};
 
 	const onReCAPTCHAChange = async (captchaCode) => {
+        console.log('second function ran')
         setDisplayLoading(false);
         setIsLoading(true);
 		if (!captchaCode) {
+            console.log('no captchaCode')
 			setError("Unprocessable content.");
 			setTimeout(() => {
 				setError("");
@@ -43,6 +45,7 @@ export default function ContactForm() {
 			setIsLoading(false);
 			return;
 		} else {
+            console.log('captchaCode exists')
 			const verify = await axios.post(
 				"https://www.google.com/recaptcha/api/siteverify",
 				{
@@ -55,7 +58,9 @@ export default function ContactForm() {
                     }
 				}
 			);
+            console.log('verify api call response (${verify}): ', verify)
 			if (!verify.data.success) {
+                console.log('verify.data.success is falsy')
 				setError("Unprocessable content.");
 				setTimeout(() => {
 					setError("");
