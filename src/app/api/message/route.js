@@ -1,5 +1,5 @@
-require("dotenv").config();
-// syncronous common js syntax purpousfully used here
+import { config } from "dotenv";
+config();
 const client = require("twilio")(
 	process.env.ACCOUNT_SID,
 	process.env.AUTH_TOKEN
@@ -26,7 +26,7 @@ export async function POST(request, response) {
 			}
 		);
 		if (!googleResponse.data.success) {
-			return NextResponse.json({ message: null, verified: false, googleResponse: googleResponse.data });
+			return NextResponse.json({ message: null, verified: false, googleResponse: JSON.stringify(googleResponse) });
 		} else {
 			const messageResponse = await client.messages
 				.create({
