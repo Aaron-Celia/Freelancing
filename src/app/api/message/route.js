@@ -25,7 +25,7 @@ export async function POST(request, response) {
 				}
 			}
 		);
-		if (!googleResponse.data.success) {
+		if (!googleResponse?.data?.success) {
 			return NextResponse.json({ message: null, verified: false });
 		} else {
 			const messageResponse = await client.messages
