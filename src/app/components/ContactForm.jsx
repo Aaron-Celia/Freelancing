@@ -64,14 +64,14 @@ export default function ContactForm() {
 				setTimeout(() => {
 					setMessageSuccess(false);
 				}, 5000);
-				recaptchaRef.current.reset();
+				recaptchaRef?.current?.reset();
 			} else {
 				setError("Error sending message.");
 				setIsLoading(false);
 				setTimeout(() => {
 					setError("");
 				}, 5000);
-				recaptchaRef.current.reset();
+				recaptchaRef?.current?.reset();
 			}
 		} catch (e) {
 			setError("Error sending message.");
@@ -79,7 +79,7 @@ export default function ContactForm() {
 			setTimeout(() => {
 				setError("");
 			}, 2500);
-			recaptchaRef.current.reset();
+			recaptchaRef?.current?.reset();
 		}
 	};
 	if (messageSuccess) {
