@@ -6,6 +6,7 @@ import { createRef, useState } from "react";
 import { Roboto } from "next/font/google";
 import Image from "next/image";
 import greenCheckmark from "../../../public/green-checkmark.png";
+import axios from "axios";
 
 const semiboldRoboto = Roboto({
 	subsets: ["latin"],
@@ -38,6 +39,25 @@ export default function ContactForm() {
 			recaptchaRef.current.reset();
 			setIsLoading(false);
 			return;
+		} else {
+			const verify = await axios.post(
+				"https://www.google.com/recaptcha/api/siteverify",
+				{
+					params: {
+						secret: process.env.NEXT_PUBLIC_RECAPTCHA_SECRET,
+						response: captchaCode
+					}
+				}
+			);
+			if (!verify.data.success) {
+				setError("Unprocessable content.");
+				setTimeout(() => {
+					setError("");
+				}, 2500);
+				recaptchaRef.current.reset();
+				setIsLoading(false);
+				return;
+			}
 		}
 		try {
 			const res = await axios.post("/api/message", {
