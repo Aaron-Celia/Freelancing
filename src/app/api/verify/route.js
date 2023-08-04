@@ -1,4 +1,5 @@
 import { config } from 'dotenv'
+import { NextResponse } from 'next/server';
 config();
 
 export async function POST(request, response) {
@@ -18,19 +19,7 @@ export async function POST(request, response) {
         })
     const googleResponseJson = await googleResponse.json()
     if (!googleResponseJson?.success) {
-        return {
-            status: 200,
-            body: {
-                message: null,
-                verified: false
-            }
-        }
+        return NextResponse.json({ message: "failed", success: false, error: "Captcha failed" })
     }
-    return {
-        status: 200,
-        body: {
-            message: "success",
-            verified: true
-        }
-    }
+    return NextResponse.json({ message: "verified", success: true })
 }
