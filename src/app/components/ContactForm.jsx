@@ -50,7 +50,8 @@ export default function ContactForm() {
 			const res = await axios.post("/api/message", {
 				email: email,
 				subject: subject || "null",
-				message: message
+				message: message,
+                captchaCode
 			});
             setIsLoading(true)
             console.log('my API RES: ', res)
@@ -100,7 +101,7 @@ export default function ContactForm() {
 	}
 	if (isLoading) {
 		return (
-			<main className="single-page flex items-center justify-center">
+			<main className="single-page flex flex-col items-center justify-center">
 				<CircularProgress size="5rem" color="primary" />
                 <h3 className={`${semiboldRoboto.className} text-center text-2xl laptop:text-4xl text-white`}>Verifying reCAPTCHA Response...</h3>
 			</main>

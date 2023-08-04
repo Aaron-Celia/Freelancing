@@ -15,7 +15,7 @@ export async function POST (request, response) {
 	try {
 		console.log('backend function ran')
         const body = await request.json();
-        const { email, subject, message } = body;
+        const { email, subject, message, captchaCode } = body;
 		const messageResponse = await client.messages
 			.create({
 				body: `You recieved a message from someone! \nEmail: ${email} \nSubject: ${subject} \nMessage:\n ${message}`,
