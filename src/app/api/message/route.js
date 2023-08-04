@@ -1,7 +1,5 @@
 import { config } from 'dotenv';
 config();
-const messSid = process.env.MESSAGING_SID;
-const twillioNumber = process.env.TWILLIO_NUMBER
 const client = require("twilio")(
 	process.env.ACCOUNT_SID,
 	process.env.AUTH_TOKEN
@@ -32,15 +30,15 @@ export async function POST (request, response) {
 				const messageResponse = await client.messages
 					.create({
 						body: `You recieved a message from someone! \nEmail: ${email} \nSubject: ${subject} \nMessage:\n ${message}`,
-						from: twillioNumber,
-						messagingServiceSid: messSid,
+						from: process.env.TWILLIO_NUMBER,
+						messagingServiceSid: process.env.MESSAGING_SID,
 						to: recipient
 					})
 					.then((message) => {
 						return message;
 					});
 				if(messageResponse) {
-					return NextResponse.json({ message: messageResponse.status})
+					return NextResponse.json({ message: messageResponse?.status})
 				}
 			}
 		}
