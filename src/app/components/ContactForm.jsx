@@ -172,7 +172,7 @@ export default function ContactForm() {
 				<Button
 					type="submit"
 					variant="contained"
-					className="bg-blue-600 hover:bg-green-700 duration-300 laptop:w-[50%] laptop:ml-[25%]"
+					className="bg-blue-600 hover:bg-green-700 duration-300 laptop:w-[50%] laptop:ml-[25%] mb-[7.5rem]"
 					endIcon={displayLoading ? null : <SendIcon />}>
 					{displayLoading ? <CircularProgress color="info" /> : "Send"}
 				</Button>
