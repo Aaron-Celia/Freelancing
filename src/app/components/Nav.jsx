@@ -191,7 +191,7 @@ export default function Nav() {
 					open={open}
                     transitionDuration={100}
 					onClose={() => setOpen(false)}>
-					<div className="h-screen w-60 mb-40 flex flex-col items-start justify-around">
+					<div className="h-[90vh] w-60 mb-40 flex flex-col items-start justify-around">
 						<div
 							onClick={() => setOpen(false)}
 							className={`ml-5 flex items-center hover:scale-105 duration-100 ${textColor1}`}>
