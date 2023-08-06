@@ -163,12 +163,12 @@ export default function ContactForm() {
 					rows={7}
 					sx={{ marginBottom: "2rem" }}
 				/>
-				{/* <ReCAPTCHA
+				<ReCAPTCHA
 					ref={recaptchaRef}
 					size="invisible"
 					sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
 					onChange={onReCAPTCHAChange}
-				/> */}
+				/>
 				<Button
 					type="submit"
 					variant="contained"
