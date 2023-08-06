@@ -163,16 +163,16 @@ export default function ContactForm() {
 					rows={7}
 					sx={{ marginBottom: "2rem" }}
 				/>
-				<ReCAPTCHA
+				{/* <ReCAPTCHA
 					ref={recaptchaRef}
 					size="invisible"
 					sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
 					onChange={onReCAPTCHAChange}
-				/>
+				/> */}
 				<Button
 					type="submit"
 					variant="contained"
-					className="bg-blue-600 hover:bg-green-700 duration-300 laptop:w-[50%] laptop:ml-[25%] mb-[7.5rem]"
+					className="bg-blue-600 hover:bg-green-700 duration-300 mb-[7.5rem]"
 					endIcon={displayLoading ? null : <SendIcon />}>
 					{displayLoading ? <CircularProgress color="info" /> : "Send"}
 				</Button>
