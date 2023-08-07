@@ -1,8 +1,13 @@
 'use client';
+import { useEffect } from "react";
 import { InlineWidget, PopupButton } from "react-calendly";
 
 
 export default function MeetingPage() {
+    let rootEle;
+    useEffect(() => {
+        rootEle = document.getElementById('root-booking');
+    }, [])
 	return (
 		<main
 			id="root-booking"
@@ -16,18 +21,18 @@ export default function MeetingPage() {
 					 * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
 					 */
 					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-10"
-					rootElement={window.document.getElementById("root-booking")}
+					rootElement={rootEle}
 					text="Schedule a 30 Minute Meeting"
 				/>
 				<PopupButton
 					url="https://calendly.com/d/4kf-fdb-mzw/initial-meeting"
-					rootElement={window.document.getElementById("root-booking")}
+					rootElement={rootEle}
 					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-10"
 					text="Schedule Initial Meeting"
 				/>
 				<PopupButton
 					url="https://calendly.com/d/25c-f35-w37/progress-check-in"
-					rootElement={window.document.getElementById("root-booking")}
+					rootElement={rootEle}
 					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-10"
 					text="Schedule Progress Check in"
 				/>
