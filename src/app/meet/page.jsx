@@ -5,7 +5,7 @@ import { InlineWidget, PopupButton } from "react-calendly";
 export default function MeetingPage() {
 	return (
 		<main
-			id="root"
+			id="root-booking"
 			className="single-page flex flex-col justify-around items-center">
 			<h3 className="text-3xl text-white mt-10">Schedule a Video Meeting</h3>
 			<div className="flex flex-col laptop:flex-row mb-40 justify-around laptop:w-screen w-[60vw] px-10 mt-20">
@@ -16,18 +16,18 @@ export default function MeetingPage() {
 					 * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
 					 */
 					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-10"
-					rootElement={document.getElementById("root")}
+					rootElement={window.document.getElementById("root-booking")}
 					text="Schedule a 30 Minute Meeting"
 				/>
 				<PopupButton
 					url="https://calendly.com/d/4kf-fdb-mzw/initial-meeting"
-					rootElement={document.getElementById("root")}
+					rootElement={window.document.getElementById("root-booking")}
 					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-10"
 					text="Schedule Initial Meeting"
 				/>
 				<PopupButton
 					url="https://calendly.com/d/25c-f35-w37/progress-check-in"
-					rootElement={document.getElementById("root")}
+					rootElement={window.document.getElementById("root-booking")}
 					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-10"
 					text="Schedule Progress Check in"
 				/>
