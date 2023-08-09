@@ -18,19 +18,19 @@ export default function MeetingPage() {
 					 */
 					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-5"
 					rootElement={document.getElementById('bg')}
-					text="Schedule a 30 Minute Meeting"
+					text="30 Minute Meeting"
 				/>
 				<PopupButton
 					url="https://calendly.com/d/4kf-fdb-mzw/initial-meeting"
 					rootElement={document.getElementById('bg')}
 					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-5"
-					text="Schedule Initial Meeting"
+					text="Initial Meeting"
 				/>
 				<PopupButton
 					url="https://calendly.com/d/25c-f35-w37/progress-check-in"
 					rootElement={document.getElementById('bg')}
 					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 mt-5 mb-20"
-					text="Schedule Progress Check in"
+					text="Progress Check in"
 				/>
 			</div>
 		</main>
