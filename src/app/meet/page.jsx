@@ -40,7 +40,7 @@ export default function MeetingPage() {
 				</div>
 			</main>
 		);
-	}
+	} else return null
 }
 
 // link for initial meeting:
