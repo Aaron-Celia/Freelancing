@@ -18,7 +18,7 @@ export default function MeetingPage() {
 					</h3>
 					<PopupButton
 						url="https://calendly.com/d/4kf-fdb-mzw/initial-meeting"
-						rootElement={document.getElementById("bg")}
+						rootElement={document.getElementById("modal-root")}
 						className="w-3/4 bg-blue-600 h-10 rounded-xl"
 						text="Schedule"
 					/>
@@ -32,7 +32,7 @@ export default function MeetingPage() {
 					</h3>
 					<PopupButton
 						url="https://calendly.com/d/25c-f35-w37/progress-check-in"
-						rootElement={document.getElementById("bg")}
+						rootElement={document.getElementById("modal-root")}
 						className="w-3/4 bg-blue-600 h-10 rounded-xl"
 						text="Schedule"
 					/>
@@ -47,7 +47,7 @@ export default function MeetingPage() {
 					<PopupButton
 						url="https://calendly.com/aaron-r-celia/30min"
 						className="w-3/4 bg-blue-600 h-10 rounded-xl"
-						rootElement={document.getElementById("bg")}
+						rootElement={document.getElementById("modal-root")}
 						text="Schedule"
 					/>
 				</div>

@@ -11,5 +11,5 @@ export default function NoSSR({ children }) {
 		return null;
 	}
 
-	return children;
+	return <div id='modal-root'>{children}</div>
 }
