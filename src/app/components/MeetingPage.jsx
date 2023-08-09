@@ -1,13 +1,18 @@
 "use client";
+import { useMediaQuery } from "@mui/material";
 import { useRef } from "react";
 import { PopupButton } from "react-calendly";
 
 export default function MeetingPage() {
-	const rootRef = useRef(null);
+    const onLargeScreen = useMediaQuery('(min-width: 650px)')
+    console.log(onLargeScreen)
+    const popUpSettings = {
+        primaryColor: 'ffffff',
+        backgroundColor: '000000',
+        textColor: 'ffffff',
+    }
 	return (
-		<main
-			ref={rootRef}
-			className="meeting-page flex flex-col justify-around items-center overflow-auto h-screen w-screen">
+		<main className="meeting-page flex flex-col justify-around items-center overflow-auto h-screen w-screen">
 			<div className="h-[80vh] w-screen flex flex-col laptop:flex-row laptop:justify-around items-center justify-around mb-40">
 				<div className="xs:mt-5 phone:mt-0 h-40 w-3/4 laptop:w-1/4 laptop:h-1/2 border rounded-xl flex flex-col justify-around items-center bg-slate-800 bg-opacity-20 text-white text-center py-2 px-2">
 					<h2 className="text-blue-200 laptop:text-3xl text-2xl">
@@ -21,6 +26,8 @@ export default function MeetingPage() {
 						rootElement={document.getElementById("bg")}
 						className="w-3/4 bg-blue-600 h-10 rounded-xl"
 						text="Schedule"
+						pageSettings={popUpSettings}
+
 					/>
 				</div>
 				<div className="h-40 w-3/4 laptop:w-1/4 laptop:h-1/2 border rounded-xl flex flex-col justify-around bg-slate-800 bg-opacity-20 items-center text-white text-center py-2 px-2">
@@ -33,8 +40,9 @@ export default function MeetingPage() {
 					<PopupButton
 						url="https://calendly.com/d/25c-f35-w37/progress-check-in"
 						rootElement={document.getElementById("bg")}
-						className="w-3/4 bg-blue-600 h-10 rounded-xl"
+						className="w-3/4 bg-blue-600 h-10 rounded-xl phone:px-20"
 						text="Schedule"
+						pageSettings={popUpSettings}
 					/>
 				</div>
 				<div className="h-40 w-3/4 laptop:w-1/4 laptop:h-1/2 border rounded-xl flex flex-col bg-slate-800 bg-opacity-20 justify-around items-center text-white text-center py-2 px-2">
@@ -49,6 +57,7 @@ export default function MeetingPage() {
 						className="w-3/4 bg-blue-600 h-10 rounded-xl"
 						rootElement={document.getElementById("bg")}
 						text="Schedule"
+						pageSettings={popUpSettings}
 					/>
 				</div>
 			</div>
