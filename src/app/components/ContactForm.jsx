@@ -22,7 +22,7 @@ export default function ContactForm() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [displayLoading, setDisplayLoading] = useState(false);
 	const [error, setError] = useState("");
-    const [invalidEmail, setInvalidEmail] = useState(false);
+    const [invalidEmail, setInvalidEmail] = useState(null);
 
 	const recaptchaRef = createRef();
 
@@ -150,7 +150,7 @@ export default function ContactForm() {
 					value={email}
 					onChange={(e) => {
                         if(invalidEmail){
-                            setInvalidEmail(false);
+                            setInvalidEmail(null);
                         }
                         setEmail(e.target.value)
                     }}
