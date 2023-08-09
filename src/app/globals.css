@@ -50,7 +50,11 @@
 		#999999,
 		#a7a7a7
 	);
-	height: calc(100vh - 5rem);
+}
+
+.front-page {
+  height: calc(100vh - 5rem);
+  width: 100vw;
 }
 
 .single-page {
@@ -75,7 +79,7 @@
 
 #subsection {
 	background-color: #a7a7a7;
-	height: 100vh;
+	height: fit-content;
 }
 
 .header-main {
