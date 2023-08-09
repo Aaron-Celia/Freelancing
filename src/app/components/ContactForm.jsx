@@ -143,7 +143,7 @@ export default function ContactForm() {
 					id="outlined-basic"
 					label="Email"
                     error={invalidEmail}
-                    helperText='Invalid Email Address'
+                    helperText={invalidEmail ? 'Invalid Email' : null}
 					required
 					variant="filled"
 					className="bg-gray-300 w-full"
