@@ -7,6 +7,7 @@ import { Roboto } from "next/font/google";
 import Image from "next/image";
 import greenCheckmark from "../../../public/green-checkmark.png";
 import axios from "axios";
+import validator from "validator";
 
 const semiboldRoboto = Roboto({
 	subsets: ["latin"],
@@ -21,11 +22,17 @@ export default function ContactForm() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [displayLoading, setDisplayLoading] = useState(false);
 	const [error, setError] = useState("");
+    const [invalidEmail, setInvalidEmail] = useState(false);
 
 	const recaptchaRef = createRef();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+        const isValid = validator.isEmail(email)
+        if(!isValid){
+            setInvalidEmail(true);
+            return;
+        }
         setDisplayLoading(true)
 		// Execute the reCAPTCHA when the form is submitted
 		recaptchaRef.current.execute();
@@ -135,11 +142,18 @@ export default function ContactForm() {
 				<TextField
 					id="outlined-basic"
 					label="Email"
+                    error={invalidEmail}
+                    helperText='Invalid Email Address'
 					required
 					variant="filled"
 					className="bg-gray-300 w-full"
 					value={email}
-					onChange={(e) => setEmail(e.target.value)}
+					onChange={(e) => {
+                        if(invalidEmail){
+                            setInvalidEmail(false);
+                        }
+                        setEmail(e.target.value)
+                    }}
 					sx={{ marginBottom: "2rem" }}
 				/>
 				<TextField
