@@ -7,7 +7,7 @@ export default function MeetingPage() {
 	return (
 		<main
 			ref={rootRef}
-			className="single-page flex flex-col justify-around items-center">
+			className="single-page flex flex-col justify-around items-center overflow-auto">
 			<h3 className="text-3xl text-white mt-10">Schedule a Video Meeting</h3>
 			<div className="flex flex-col laptop:flex-row mb-40 justify-around laptop:w-screen w-[60vw] px-10 mt-20">
 				<PopupButton
@@ -16,20 +16,20 @@ export default function MeetingPage() {
 					 * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
 					 * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
 					 */
-					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-10"
+					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-5"
 					rootElement={document.getElementById('bg')}
 					text="Schedule a 30 Minute Meeting"
 				/>
 				<PopupButton
 					url="https://calendly.com/d/4kf-fdb-mzw/initial-meeting"
 					rootElement={document.getElementById('bg')}
-					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-10"
+					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-5"
 					text="Schedule Initial Meeting"
 				/>
 				<PopupButton
 					url="https://calendly.com/d/25c-f35-w37/progress-check-in"
 					rootElement={document.getElementById('bg')}
-					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 my-10"
+					className="text-white text-xl px-5 py-5 rounded-xl bg-blue-600 mt-5 mb-20"
 					text="Schedule Progress Check in"
 				/>
 			</div>
