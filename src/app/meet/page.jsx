@@ -8,7 +8,7 @@ export default function MeetingPage() {
 	useEffect(() => {
 		setClientRendering(true);
 	}, []);
-	if (clientRendering || document) {
+	if (clientRendering || window?.document) {
 		return (
 			<main
 				id="root-booking"
