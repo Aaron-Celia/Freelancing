@@ -14,9 +14,9 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className={`bg-white`}>
 				<Nav />
-				<div id="bg" className={`${poiretOne.className}`}>
-					{children}
-				</div>
+					<div id="bg" className={`${poiretOne.className}`}>
+						{children}
+					</div>
 				<script
 					type="text/javascript"
 					src="https://assets.calendly.com/assets/external/widget.js"></script>

@@ -20,6 +20,27 @@
 	width: 100vw;
 }
 
+/* #content {
+  position: relative;
+  min-height: 100%;
+} */
+
+/* footer {
+	background: #000000;
+	background: -webkit-linear-gradient(
+		to right,
+		#434343,
+		#000000
+	);
+	background: linear-gradient(
+		to right,
+		#434343,
+		#000000
+	);
+  position: absolute;
+  bottom: 0;
+} */
+
 #bg {
 	background: #eeeded;
 	height: calc(100vh - 5rem);
@@ -53,12 +74,12 @@
 }
 
 .front-page {
-  height: calc(100vh - 5rem);
-  width: 100vw;
+	height: calc(100vh - 5rem);
+	width: 100vw;
 }
 
 .single-page {
-  	background-image: linear-gradient(
+	background-image: linear-gradient(
 		to bottom,
 		#222222,
 		#2d2d2d,
@@ -74,7 +95,7 @@
 		#a7a7a7
 	);
 	height: calc(100vh - 5rem);
-  width: 100vw;
+	width: 100vw;
 }
 
 #subsection {
@@ -83,12 +104,12 @@
 }
 
 .header-main {
-  color: #e1e1e1;
-  text-shadow: 10px 20px 80px white;
+	color: #e1e1e1;
+	text-shadow: 10px 20px 80px white;
 }
 
 .meeting-page {
-  background-image: linear-gradient(
+	background-image: linear-gradient(
 		to bottom,
 		#222222,
 		#2d2d2d,
@@ -103,5 +124,26 @@
 		#999999,
 		#a7a7a7
 	);
-  height: 105vh;
+	height: 105vh;
+}
+
+.projects-page {
+	background-image: linear-gradient(
+		to bottom,
+		#222222,
+		#2d2d2d,
+		#383838,
+		#444444,
+		#505050,
+		#5b5b5b,
+		#666666,
+		#717171,
+		#7e7e7e,
+		#8c8c8c,
+		#999999,
+		#a7a7a7
+	);
+	background-position: fixed;
+	overflow: scroll;
+	height: fit-content;
 }
