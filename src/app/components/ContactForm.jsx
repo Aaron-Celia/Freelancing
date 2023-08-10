@@ -146,7 +146,7 @@ export default function ContactForm() {
                     helperText={invalidEmail ? 'Invalid Email' : null}
 					required
 					variant="filled"
-					className="bg-gray-300 w-full"
+					className="bg-gray-300 w-full rounded-xl"
 					value={email}
 					onChange={(e) => {
                         if(invalidEmail){
@@ -162,7 +162,7 @@ export default function ContactForm() {
 					value={subject}
 					onChange={(e) => setSubject(e.target.value)}
 					label="Subject"
-					className="bg-gray-300 w-full"
+					className="bg-gray-300 w-full rounded-xl"
 					variant="filled"
 				/>
 				<TextField
@@ -171,7 +171,7 @@ export default function ContactForm() {
 					variant="filled"
 					required
 					value={message}
-					className="bg-gray-300 w-full"
+					className="bg-gray-300 w-full rounded-xl"
 					onChange={(e) => setMessage(e.target.value)}
 					multiline
 					rows={7}
@@ -186,7 +186,7 @@ export default function ContactForm() {
 				<Button
 					type="submit"
 					variant="contained"
-					className="bg-blue-600 hover:bg-green-700 duration-300 mb-[7.5rem]"
+					className="bg-blue-600 hover:bg-green-700 duration-300 mb-[7.5rem] rounded-xl"
 					endIcon={displayLoading ? null : <SendIcon />}>
 					{displayLoading ? <CircularProgress color="info" /> : "Send"}
 				</Button>
