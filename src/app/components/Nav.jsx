@@ -177,11 +177,11 @@ export default function Nav() {
 					href="/contact">
 					Get in Touch
 				</Link>
-				<Link
+				{/* <Link
 					className="menu-item text-transparent ml-2 font-extrabold text-md mx-6 hover:scale-110 duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center"
 					href="/payments">
 					Payments
-				</Link>
+				</Link> */}
 			</div>
 			<Fragment key="left">
 				<SwipeableDrawer
@@ -232,14 +232,14 @@ export default function Nav() {
 								Get in Touch
 							</Link>
 						</div>
-						<div
+						{/* <div
 							onClick={() => setOpen(false)}
 							className={`ml-5 flex items-center hover:scale-105 duration-100 ${textColor6}`}>
 							<AttachMoneyIcon fontSize="large" />
 							<Link className="ml-2 font-bold text-xl" href="/payments">
 								Payments
 							</Link>
-						</div>
+						</div> */}
 					</div>
 				</SwipeableDrawer>
 			</Fragment>

@@ -3,6 +3,7 @@ import GithubButton from "../components/GithubButton";
 import Link from "next/link";
 import ViewGithubButton from "../components/ViewGithubButton";
 import ViewSiteButton from "../components/ViewSiteButton";
+import ProjectPageFooter from "../components/ProjectPageFooter";
 
 const roboto = Roboto({
 	subsets: ["latin"],
@@ -41,12 +42,6 @@ export default function ProjectsPage() {
 					<div className="w-full h-fit flex flex-col tablet:flex-row items-center justify-around">
 						<GithubButton href="https://github.com/Aaron-Celia/weather-app" />
 						<ViewSiteButton href="https://nextweatherapp-a399e9163fb6.herokuapp.com/" />
-						{/* <Link
-							href="https://nextweatherapp-a399e9163fb6.herokuapp.com/"
-							target="_blank"
-							className={`${roboto.className} bg-green-700 h-10 flex items-center justify-center w-40 text-white px-5 py-2 rounded-xl my-5`}>
-							View Site
-						</Link> */}
 					</div>
 				</ul>
 			</div>
@@ -118,7 +113,7 @@ export default function ProjectsPage() {
 					</div>
 				</ul>
 			</div>
-			<ViewGithubButton />
+			<ProjectPageFooter />
 		</main>
 	);
 }

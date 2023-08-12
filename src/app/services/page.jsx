@@ -2,6 +2,8 @@
 
 export default function ServicesPage() {
   return (
-    <div>Services</div>
+    <main id='services-page'>
+        
+    </main>
   )
 }

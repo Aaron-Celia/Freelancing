@@ -10,11 +10,14 @@ const roboto = Roboto({
 
 export default function ViewGithubButton() {
   return (
-		<Link
-			className={`${roboto.className} bg-black text-white hover:bg-gray-700 duration-150 h-10 w-60 rounded-xl flex items-center justify-center mb-60 mt-20`}
-			href="https://github.com/Aaron-Celia"
-			target="_blank">
-			View GitHub Profile&nbsp;<GitHubIcon />
-		</Link>
+		<div className="h-10 w-60">
+			<Link
+				className={`${roboto.className} bg-black text-white hover:bg-gray-700 duration-150 h-full w-full rounded-xl flex items-center justify-center`}
+				href="https://github.com/Aaron-Celia"
+				target="_blank">
+				View GitHub Profile&nbsp;
+				<GitHubIcon />
+			</Link>
+		</div>
 	);
 }
