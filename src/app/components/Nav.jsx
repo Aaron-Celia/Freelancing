@@ -164,16 +164,6 @@ export default function Nav() {
 				</Link>
 				<Link
 					className="menu-item text-transparent ml-2 font-extrabold text-md mx-6 hover:scale-110 duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center"
-					href="/services">
-					Services
-				</Link>
-				<Link
-					className="menu-item text-transparent ml-2 font-extrabold text-md mx-6 hover:scale-110 duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center"
-					href="/meet">
-					Book A Meeting
-				</Link>
-				<Link
-					className="menu-item text-transparent ml-2 font-extrabold text-md mx-6 hover:scale-110 duration-300 h-3/4 rounded-xl px-3 flex flex-col justify-center"
 					href="/contact">
 					Get in Touch
 				</Link>
