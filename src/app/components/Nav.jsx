@@ -200,22 +200,6 @@ export default function Nav() {
 						</div>
 						<div
 							onClick={() => setOpen(false)}
-							className={`ml-5 flex items-center hover:scale-105 duration-100 ${textColor3}`}>
-							<LaptopMacIcon fontSize="large" />
-							<Link className="ml-2 font-bold text-xl" href="/services">
-								Services Offered
-							</Link>
-						</div>
-						<div
-							onClick={() => setOpen(false)}
-							className={`ml-5 flex items-center hover:scale-105 duration-100 ${textColor4}`}>
-							<CalendarMonthIcon fontSize="large" />
-							<Link className="ml-2 font-bold text-xl" href="/meet">
-								Book a Meeting
-							</Link>
-						</div>
-						<div
-							onClick={() => setOpen(false)}
 							className={`ml-5 flex items-center hover:scale-105 duration-100 ${textColor5}`}>
 							<ContactMailIcon fontSize="large" />
 							<Link className="ml-2 font-bold text-xl" href="/contact">
